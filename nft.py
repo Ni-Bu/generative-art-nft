@@ -195,6 +195,7 @@ def generate_images(edition, count, drop_dup=True):
             os.remove(os.path.join(op_path, str(i).zfill(zfill_count) + '.png'))
 
         # Rename images such that it is sequentialluy numbered
+        zfill_count=len(str(len(sorted(os.listdir(op_path)))-1))
         for idx, img in enumerate(sorted(os.listdir(op_path))):
             os.rename(os.path.join(op_path, img), os.path.join(op_path, str(idx).zfill(zfill_count) + '.png'))
     
